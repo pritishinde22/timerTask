@@ -1,0 +1,56 @@
+.blink {
+    animation: blink-animation 1s steps(3, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+  }
+
+.font-Orbitron {
+    font-family: 'Orbitron', sans-serif;
+ 
+}
+.font-30 {
+    font-size: 30px;
+}
+.fontBis {
+    color: rgb(255, 175, 77)
+}
+.fontChange {
+    color:white;
+}
+.fontTimer {
+    color:rgb(244, 224, 80);
+}
+.margin-top-align {
+    margin-top: 75px;
+}
+.margin-top-timer {
+    margin-top: 50px;
+}
+#st-box {
+    float:left;
+    margin-top: 170px;
+}
+#nd-box {
+    border-radius: 130px !important;
+    float:right;
+    margin-top: -10px;
+    width:240px;
+    height:240px;
+    background-color:rgb(72, 59, 59); 
+    border:solid black;
+}
+#rd-box {
+    border-radius: 130px !important;
+    float:right;
+    width:240px;
+    /* margin-left: 180px; */
+    margin-top: 10px;
+    padding-top: 10px;
+    height:240px;
+    background-color:rgb(72, 59, 59);
+    border:solid black;
+}
