@@ -7,7 +7,6 @@ const BeforeBreak = (props) => {
     if (hr1 > 12) return hr1 - 12;
     else return hr1;
   }
-
   return (
     <>
       <div id="st-box">
