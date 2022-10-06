@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import "./Counter.css";
+import "./DigitalClock.css";
 const Counter = (props) => {
-  const [time, setTime] = useState(10000);
+  const [time, setTime] = useState(1800000);
 
   useEffect(() => {
     if (time < 0) {

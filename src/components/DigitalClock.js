@@ -9,7 +9,7 @@ const DigitalClock = () => {
 
   const [timerOn, setTimerOn] = useState(false);
   const [timerOff, setTimerOff] = useState(false);
-  const breakTime = "11:37:00";
+  const breakTime = "18:37:00";
 
   const [hrs, min] = breakTime.split(":");
 
@@ -19,7 +19,7 @@ const DigitalClock = () => {
   setInterval(UpdateTime, 1000);
 
   useEffect(() => {
-    if (!timerOn && count > breakTime && !timerOff) {
+    if (!timerOn && count > breakTime && !timerOff ) {
       setTimerOn(true);
     }
   }, [timerOn, count, timerOff]);
@@ -31,7 +31,7 @@ const DigitalClock = () => {
       interval = setTimeout(() => {
         setTimerOn(false);
         setTimerOff(true);
-      }, 10000);
+      }, 1800000);
     } else if (!timerOn) {
       clearTimeout(interval);
     }
