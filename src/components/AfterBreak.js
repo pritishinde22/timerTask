@@ -32,7 +32,7 @@ let [hrs,min]=props.timepicker.split(":");
         <div id="nd-box" className="font-Orbitron">
           <h1 className="fontChange font-30 margin-top-align">
             Break <br />
-            Time
+            Time!
           </h1>
         </div>
         <br />

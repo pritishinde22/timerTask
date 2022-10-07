@@ -8,7 +8,7 @@ import "./DigitalClock.css";
 const DigitalClock = () => {
   let liveTime = new Date().toLocaleTimeString();
   const [count, setCount] = useState(liveTime);
-  const [timepickerValue, setTimepickerValue] = useState("5:30");
+  const [timepickerValue, setTimepickerValue] = useState();
   const [timerOn, setTimerOn] = useState(false);
   const [timerOff, setTimerOff] = useState(false);
 
@@ -19,8 +19,8 @@ const DigitalClock = () => {
   const live = count.split(":");
   const livemin = live[0] * 60 + live[1];
 
-  const break1 = timepickerValue?.split(":");
-  const breakmin = break1[0] * 60 + 30 + break1[1];
+  const break1 = timepickerValue ? timepickerValue?.split(":") : "";
+  const breakmin = timepickerValue ? break1[0] * 60 + 30 + break1[1] : "";
 
   useEffect(() => {
     if (
@@ -30,6 +30,10 @@ const DigitalClock = () => {
       !timerOff
     ) {
       setTimerOn(true);
+    }
+    if(livemin > breakmin)
+    {
+      setTimerOn(false);
     }
   }, [timerOn, count, timerOff]);
 
@@ -65,6 +69,7 @@ const DigitalClock = () => {
               clearIcon={null}
               clearAriaLabel={null}
               onClockOpen={undefined}
+              minTime={new Date()}
             />
           </BeforeBreak>
         </>

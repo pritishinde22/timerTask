@@ -36,7 +36,7 @@ const BeforeBreak = (props) => {
             <h2 className="font-Orbitron">
               Break Time: <br />
             </h2>
-            <h1 >{props.children}</h1>
+            <h2 >{props.children}</h2>
           </div>
         </div>
         <br />
