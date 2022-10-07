@@ -1,25 +1,34 @@
 import { useEffect, useState } from "react";
 import AfterBreak from "./AfterBreak";
 import BeforeBreak from "./BeforeBreak";
+
+import TimePicker from "react-time-picker";
 import "./DigitalClock.css";
 
 const DigitalClock = () => {
   let liveTime = new Date().toLocaleTimeString();
   const [count, setCount] = useState(liveTime);
-
+  const [timepickerValue, setTimepickerValue] = useState("5:30");
   const [timerOn, setTimerOn] = useState(false);
   const [timerOff, setTimerOff] = useState(false);
-  const breakTime = "18:37:00";
-
-  const [hrs, min] = breakTime.split(":");
 
   const UpdateTime = () => {
     setCount(new Date().toLocaleTimeString());
   };
   setInterval(UpdateTime, 1000);
+  const live = count.split(":");
+  const livemin = live[0] * 60 + live[1];
+
+  const break1 = timepickerValue?.split(":");
+  const breakmin = break1[0] * 60 + 30 + break1[1];
 
   useEffect(() => {
-    if (!timerOn && count > breakTime && !timerOff ) {
+    if (
+      !timerOn &&
+      count > timepickerValue &&
+      livemin < breakmin &&
+      !timerOff
+    ) {
       setTimerOn(true);
     }
   }, [timerOn, count, timerOff]);
@@ -43,17 +52,25 @@ const DigitalClock = () => {
     if (hr1 > 12) return hr1 - 12;
     else return hr1;
   }
-  // console.log("timerOn---", timerOn);
   return (
     <section className="">
       {!timerOn ? (
         <>
-          <BeforeBreak count={count} hrs={hrs} min={min} />
+          <BeforeBreak count={count}>
+            {" "}
+            <TimePicker
+              onChange={setTimepickerValue}
+              value={timepickerValue}
+              clockIcon={null}
+              clearIcon={null}
+              clearAriaLabel={null}
+              onClockOpen={undefined}
+            />
+          </BeforeBreak>
         </>
       ) : (
         <AfterBreak
-          hrs={hrs}
-          min={min}
+          timepicker={timepickerValue}
           setTimerOn={setTimerOn}
           timerOn={timerOn}
           hourFormat={hourFormat}

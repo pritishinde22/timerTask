@@ -7,7 +7,7 @@ const AfterBreak = (props) => {
     if (hr1 > 12) return hr1 - 12;
     else return hr1;
   }
-
+let [hrs,min]=props.timepicker.split(":");
   return (
     <>
       <div id="st-box">
@@ -20,9 +20,9 @@ const AfterBreak = (props) => {
           <div className="font-Orbitron fontChange">
             <label className="font-30">
               {" "}
-              {props.hrs > 12 ? hourFormat(props.hrs) : hourFormat(props.hrs)}
+              {hrs > 12 ? hourFormat(hrs) : hourFormat(hrs)}
               <span className="blink">:</span>
-              {props.min} {props.hrs > 11 ? <span> PM</span> : <span>AM</span>}
+              {min} {hrs > 11 ? <span> PM</span> : <span>AM</span>}
             </label>
             <h2 className="blink">You Are On Break!!</h2>
           </div>

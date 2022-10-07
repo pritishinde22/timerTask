@@ -8,6 +8,7 @@ function App() {
       <section className="container">
         <DigitalClock />
       </section>
+  
     </div>
   );
 }
