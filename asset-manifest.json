@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/timerTask/static/css/main.f0baca0e.css",
+    "main.js": "/timerTask/static/js/main.5746eed2.js",
+    "static/js/787.ea1f836f.chunk.js": "/timerTask/static/js/787.ea1f836f.chunk.js",
+    "index.html": "/timerTask/index.html",
+    "main.f0baca0e.css.map": "/timerTask/static/css/main.f0baca0e.css.map",
+    "main.5746eed2.js.map": "/timerTask/static/js/main.5746eed2.js.map",
+    "787.ea1f836f.chunk.js.map": "/timerTask/static/js/787.ea1f836f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f0baca0e.css",
+    "static/js/main.5746eed2.js"
+  ]
+}
