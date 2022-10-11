@@ -3,12 +3,6 @@ import "./DigitalClock.css";
 const BeforeBreak = (props) => {
   const [hours, minutes, seconds] = props.count.split(":");
 
-  function hourFormat(hr) {
-    let hr1 = parseInt(hr);
-    if (hr1 > 12) return hr1 - 12;
-    else return hr1;
-  }
-
   return (
     <>
       <div id="st-box">
@@ -18,15 +12,24 @@ const BeforeBreak = (props) => {
             rel="stylesheet"
             type="text/css"
           ></link>
-          <div className="font-Orbitron font-30 fontBis">
-            <h1>
+          <div className="font-Orbitron beforeTimeDate fontChange">
+            {" "}
+            <strong>
+              {props.date} {props.month} {props.year}
+            </strong>{" "}
+            <br />
+            <span>{props.day}</span>
+          </div>
+          <br />
+          <div className="font-Orbitron font-30 fontChange">
+            <h2>
               {" "}
-              {hours > 12 ? hourFormat(hours) : hourFormat(hours)}
+              {hours}
               <span className="blink">:</span>
               {minutes}
               <span className="blink">:</span>
-              {seconds} {hours > 11 ? <span> PM</span> : <span>AM</span>}
-            </h1>
+              {seconds}
+            </h2>
           </div>
         </>
       </div>
@@ -36,7 +39,7 @@ const BeforeBreak = (props) => {
             <h2 className="font-Orbitron">
               Break Time: <br />
             </h2>
-            <h2 >{props.children}</h2>
+            <h2>{props.children}</h2>
           </div>
         </div>
         <br />

@@ -32,7 +32,7 @@
 }
 #st-box {
     float:left;
-    margin-top: 170px;
+    margin-top: 110px;
 }
 #nd-box {
     border-radius: 130px !important;
@@ -59,4 +59,31 @@
     font-weight: 400;
     font-size: medium;
     color: antiquewhite;
+}
+
+.inputbreaktime input{
+    width: 40px;
+    height: 40px;
+    /* text-align: center; */
+    font-size: large;
+    background-color: rgb(121, 98, 98);
+}
+
+.inputbreaktime div {
+    display: flex;
+    margin-left: 70px;
+}
+
+.submitbutton {
+    background-color: rgb(121, 98, 98);
+    cursor: pointer;
+}
+
+.font-25 {
+    font-size: 25px;
+}
+.beforeTimeDate {
+    font-size: 25px;
+    width: fit-content;
+    justify-content: center;
 }

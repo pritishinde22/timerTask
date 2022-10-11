@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./DigitalClock.css";
 const Counter = (props) => {
-  const [time, setTime] = useState(1800000);
+  const [time, setTime] = useState(props.timeRemained);
 
   useEffect(() => {
     if (time < 0) {
@@ -14,8 +14,8 @@ const Counter = (props) => {
 
     if (props.timerOn) {
       interval = setInterval(() => {
-        setTime((prevTime) => prevTime - 100);
-      }, 100);
+        setTime((prevTime) => prevTime - 10);
+      }, 10);
     } else if (!props.timerOn) {
       clearInterval(interval);
       

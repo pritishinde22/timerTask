@@ -1,6 +1,6 @@
 {
   "name": "timertask",
-  "homepage": "https://pritishinde22.github.io/timer",
+  "homepage": "https://pritishinde22.github.io/timerTask",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -16,7 +16,9 @@
     "operator": "^1.8.0",
     "react": "^18.2.0",
     "react-blink-text": "^1.0.5",
+    "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.37.0",
     "react-scripts": "5.0.1",
     "react-simple-timepicker": "0.0.1",
     "react-time-picker": "^5.0.0",
